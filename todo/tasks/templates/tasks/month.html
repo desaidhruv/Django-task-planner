@@ -1,0 +1,39 @@
+{% extends "tasks/navbar.html" %}
+{% load static %}
+{% block content %}
+        
+    <div class="container">
+        <div class="row ">
+            
+            <div class="col s12 m6 l7">
+                <h2 class="center-align txt">Let's Plan our Month.</h2>
+              <div class="card deep-purple accent-2 hoverable z-depth-2">
+                <div class="card-content white-text">
+                  <span class="card-title">Enter Monthly Tasks:</span>
+                  <form action="{% url 'addmonth' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text"placeholder="Enter a Todo" name="todomonth">
+                    <input type="submit" value="Add" class="btn deep-purple accent-4">
+                </form>
+                
+                </div>
+                    <div class="card horizontal deep-purple accent-3">
+                      <div class="card-stacked ">
+                        <div class="card-content white-text">
+                            {% for items_month in datamonth %}
+                            <form action="/deletemonth/{{ items_month.id }}/" method="post">
+                                {% csrf_token %}
+                                <p>{{ items_month.content_month }}</p><br>
+                                <input type="submit" value="Delete" class="btn red accent-3">
+                                <hr class="divider">
+                            </form><br>
+                        {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+</div>
+</body>
+</html>
+{% endblock %}

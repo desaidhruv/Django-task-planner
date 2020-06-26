@@ -1,0 +1,39 @@
+{% extends "tasks/navbar.html" %}
+{% load static %}
+{% block content %}
+        
+    <div class="container">
+        <div class="row ">
+            
+            <div class="col s12 m6 l6">
+                <h2 class="center-align txt">Let's Plan our day.</h2>
+              <div class="card deep-purple accent-2 hoverable z-depth-2">
+                <div class="card-content white-text">
+                  <span class="card-title">Enter Today's Tasks:</span>
+                  <form action="{% url 'add' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text"placeholder="Enter a Todo" name="todo">
+                    <input type="submit" value="Add" name="" id="" class="btn deep-purple accent-4">
+                </form>
+                
+                </div>
+                    <div class="card horizontal deep-purple accent-3">
+                      <div class="card-stacked ">
+                        <div class="card-content white-text">
+                            {% for items in data %}
+                            <form action="/delete/{{ items.id }}/" method="post">
+                                {% csrf_token %}
+                                <p>{{ items.content }}</p><br>
+                                <input type="submit" value="Delete" class="btn red accent-3">
+                                <hr class="divider">
+                            </form><br>
+                        {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+</div>
+</body>
+</html>
+{% endblock %}
