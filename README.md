@@ -1,5 +1,5 @@
 # Django-task-planner
-This is a simple task planner app to organise your work monthly, weekly or daily.
+This is a simple task planner app to organise your work monthly, weekly or daily.<br>
 Live on Heroku: https://dhruv-todo.herokuapp.com/
 
 ![django](https://user-images.githubusercontent.com/40533390/85207841-5b104980-b349-11ea-9004-76bbbcc68f2a.png)
