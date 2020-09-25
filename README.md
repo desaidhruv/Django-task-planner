@@ -2,7 +2,7 @@
 This is a simple task planner app to organise your work monthly, weekly or daily.<br>
 Live on Heroku: https://dhruv-todo.herokuapp.com/
 
-![django](https://user-images.githubusercontent.com/40533390/85207841-5b104980-b349-11ea-9004-76bbbcc68f2a.png)
+![Task Planner](https://user-images.githubusercontent.com/40533390/94311970-bc276900-ff99-11ea-99da-53b78c916689.png)
 
 <h2>Getting Started</h2>
 <p>Steps:</p>
