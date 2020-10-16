@@ -6,7 +6,7 @@ def home(request):
     return render(request, 'tasks/home.html', {'data': data})
 
 def add(request):
-    tododata = request.POST['todo']
+    tododata = request.POST['todo'] # Adds todo item
     todo_items = todo(content=tododata)
     todo_items.save()
     return redirect(home)
